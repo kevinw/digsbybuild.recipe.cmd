@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-This module contains the tool of collective.recipe.cmd
+This module contains the tool of digsbybuild.recipe.cmd
 """
 import os
 from setuptools import setup, find_packages
@@ -21,7 +21,7 @@ long_description = (
     'Detailed Documentation\n'
     '**********************\n'
     + '\n' +
-    read('collective', 'recipe', 'cmd', 'README.txt')
+    read('digsbybuild', 'recipe', 'cmd', 'README.txt')
     + '\n' +
     'Contributors\n'
     '************\n'
@@ -31,7 +31,7 @@ long_description = (
     'Download\n'
     '********\n'
     )
-entry_point = 'collective.recipe.cmd'
+entry_point = 'digsbybuild.recipe.cmd'
 entry_points = {"zc.buildout": [
                             "default = %s:Cmd" % entry_point,
                             "sh = %s:Cmd" % entry_point,
@@ -46,7 +46,7 @@ entry_points = {"zc.buildout": [
 
 tests_require=['zope.testing', 'zc.buildout']
 
-setup(name='collective.recipe.cmd',
+setup(name='digsbybuild.recipe.cmd',
       version=version,
       description="ZC Buildout recipe to execute a commande line",
       long_description=long_description,
@@ -64,7 +64,7 @@ setup(name='collective.recipe.cmd',
       url='http://plone.org/products/collective-recipes',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['collective', 'collective.recipe'],
+      namespace_packages=['digsbybuild', 'digsbybuild.recipe'],
       include_package_data=True,
       zip_safe=False,
       install_requires=['setuptools',
@@ -73,7 +73,7 @@ setup(name='collective.recipe.cmd',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
-      test_suite = 'collective.recipe.cmd.tests.test_docs.test_suite',
+      test_suite = 'digsbybuild.recipe.cmd.tests.test_docs.test_suite',
       entry_points=entry_points,
       )
 

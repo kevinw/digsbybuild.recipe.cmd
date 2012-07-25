@@ -1,0 +1,9 @@
+[zc.buildout]
+default = digsbybuild.recipe.cmd:Cmd
+py = digsbybuild.recipe.cmd:Python
+sh = digsbybuild.recipe.cmd:Cmd
+
+[zc.buildout.uninstall]
+default = digsbybuild.recipe.cmd:uninstallCmd
+sh = digsbybuild.recipe.cmd:uninstallCmd
+

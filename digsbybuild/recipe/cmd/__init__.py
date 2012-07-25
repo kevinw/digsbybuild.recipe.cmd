@@ -40,10 +40,12 @@ def run_commands(cmds, shell):
             tmpfile = os.path.join(dirname, 'run')
         open(tmpfile, 'w').write('\n'.join(lines))
         if sys.platform == 'win32':
-            call(tmpfile, shell=True)
+            retcode = call(tmpfile, shell=True)
         else:
-            call('%s %s' % (shell, tmpfile), shell=True)
+            retcode = call('%s %s' % (shell, tmpfile), shell=True)
         shutil.rmtree(dirname)
+        if retcode != 0:
+            raise Exception('non-zero return code for cmds:\n' + cmds)
 
 class Cmd(object):
     """This recipe is used by zc.buildout"""

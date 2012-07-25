@@ -1,5 +1,5 @@
 Metadata-Version: 1.0
-Name: collective.recipe.cmd
+Name: digsbybuild.recipe.cmd
 Version: 0.5
 Summary: ZC Buildout recipe to execute a commande line
 Home-page: http://plone.org/products/collective-recipes
@@ -116,7 +116,7 @@ Description: .. contents::
         ... parts = cmds
         ...
         ... [cmds]
-        ... recipe = collective.recipe.cmd
+        ... recipe = digsbybuild.recipe.cmd
         ... on_install=true
         ... cmds= %s
         ... """
@@ -183,7 +183,7 @@ Description: .. contents::
         ... parts = py py2
         ...
         ... [py]
-        ... recipe = collective.recipe.cmd:py
+        ... recipe = digsbybuild.recipe.cmd:py
         ... on_install=true
         ... cmds=
         ...   >>> sample_buildout = buildout.get('directory', '.')
@@ -191,7 +191,7 @@ Description: .. contents::
         ...   >>> os.remove(os.path.join(sample_buildout, ".installed.cfg"))
         ...   >>> print sorted(os.listdir(sample_buildout))
         ... [py2]
-        ... recipe = collective.recipe.cmd:py
+        ... recipe = digsbybuild.recipe.cmd:py
         ... on_install=true
         ... cmds=
         ...   >>> def myfunc(value):
